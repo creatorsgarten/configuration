@@ -6,6 +6,7 @@ jobs:
   pulumi:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - run: curl -fsSL https://get.pulumi.com | sh
       - run: ~/.pulumi/bin/pulumi login --local
       - run: ~/.pulumi/bin/pulumi preview
