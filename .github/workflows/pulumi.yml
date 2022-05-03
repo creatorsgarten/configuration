@@ -27,7 +27,7 @@ jobs:
       - run: ~/.pulumi/bin/pulumi stack select gh
       - run: ~/.pulumi/bin/pulumi stack import --file=stack.json
       - run: ~/.pulumi/bin/pulumi preview
-      - run: ~/.pulumi/bin/pulumi up
+      - run: ~/.pulumi/bin/pulumi up --yes
         env:
           GITHUB_TOKEN: ${{ steps.githubAppAuth.outputs.token }}
       - run: ~/.pulumi/bin/pulumi stack export --file=stack.json
