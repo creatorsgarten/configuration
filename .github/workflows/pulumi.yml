@@ -5,6 +5,8 @@ on:
 jobs:
   pulumi:
     runs-on: ubuntu-latest
+    env:
+      PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
     steps:
       - uses: actions/checkout@v3
       - run: curl -fsSL https://get.pulumi.com | sh
