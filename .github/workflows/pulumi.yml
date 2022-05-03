@@ -19,4 +19,5 @@ jobs:
       - run: ~/.pulumi/bin/pulumi login --local
       - run: ~/.pulumi/bin/pulumi stack init gh
       - run: ~/.pulumi/bin/pulumi stack select gh
+      - run: ~/.pulumi/bin/pulumi stack import --file=stack.json
       - run: ~/.pulumi/bin/pulumi preview
