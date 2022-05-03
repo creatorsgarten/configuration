@@ -38,5 +38,3 @@ jobs:
       - run: ~/.pulumi/bin/pulumi stack export --file=stack/stack.json
       - run: cat stack.json
       - run: ./sync.sh
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
