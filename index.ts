@@ -1,7 +1,10 @@
 import * as github from "@pulumi/github";
 
-const repo = new github.Repository("demo-repo-from-pulumi", {
-  description: "Demo Repository for GitHub",
+new github.TeamMembership("membership-for-heypoom", {
+  teamId: "6011674",
+  username: "heypoom",
 });
-
-export const clusterName = repo.name;
+new github.TeamMembership("membership-for-pankace", {
+  teamId: "6011674",
+  username: "pankace",
+});
