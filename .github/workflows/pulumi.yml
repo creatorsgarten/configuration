@@ -20,17 +20,22 @@ jobs:
           TOKEN="$(npx obtain-github-app-installation-access-token ci ${{ secrets.GH_APP_CREDENTIALS_TOKEN }})"
           echo "::add-mask::$TOKEN"
           echo "::set-output name=token::$TOKEN"
+      - uses: actions/checkout@v3
+        with:
+          repository: "creatorsgarten/stack"
+          token: ${{ steps.githubAppAuth.outputs.token }}
+          path: stack
       - run: yarn
       - run: curl -fsSL https://get.pulumi.com | sh
       - run: ~/.pulumi/bin/pulumi login --local
       - run: ~/.pulumi/bin/pulumi stack init gh
       - run: ~/.pulumi/bin/pulumi stack select gh
-      - run: ~/.pulumi/bin/pulumi stack import --file=stack.json
+      - run: ~/.pulumi/bin/pulumi stack import --file=stack/stack.json
       - run: ~/.pulumi/bin/pulumi preview
       - run: ~/.pulumi/bin/pulumi up --yes
         env:
           GITHUB_TOKEN: ${{ steps.githubAppAuth.outputs.token }}
-      - run: ~/.pulumi/bin/pulumi stack export --file=stack.json
+      - run: ~/.pulumi/bin/pulumi stack export --file=stack/stack.json
       - run: cat stack.json
       - run: ./sync.sh
         env:
