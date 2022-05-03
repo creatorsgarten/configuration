@@ -22,7 +22,7 @@ jobs:
           echo "::set-output name=token::$TOKEN"
       - uses: actions/checkout@v3
         with:
-          repository: "creatorsgarten/stack"
+          repository: 'creatorsgarten/stack'
           token: ${{ steps.githubAppAuth.outputs.token }}
           path: stack
       - run: yarn
@@ -36,5 +36,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ steps.githubAppAuth.outputs.token }}
       - run: ~/.pulumi/bin/pulumi stack export --file=stack/stack.json
-      - run: cat stack.json
+      - run: cat stack/stack.json
       - run: ./sync.sh
