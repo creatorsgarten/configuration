@@ -1,7 +1,8 @@
 on:
   push:
     branches: main
-
+  pull_request:
+    branches: main
 jobs:
   pulumi:
     runs-on: ubuntu-latest
@@ -35,6 +36,10 @@ jobs:
       - run: ~/.pulumi/bin/pulumi up --yes
         env:
           GITHUB_TOKEN: ${{ steps.githubAppAuth.outputs.token }}
+        if: github.ref == 'refs/heads/main'
       - run: ~/.pulumi/bin/pulumi stack export --file=stack/stack.json
+        if: github.ref == 'refs/heads/main'
       - run: cat stack/stack.json
+        if: github.ref == 'refs/heads/main'
       - run: ./sync.sh
+        if: github.ref == 'refs/heads/main'
