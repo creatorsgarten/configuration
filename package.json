@@ -4,7 +4,8 @@
     "@types/node": "^14"
   },
   "dependencies": {
-    "@pulumi/pulumi": "^3.19.0",
-    "@pulumi/github": "^4.8.1"
-  }
+    "@pulumi/github": "^4.8.1",
+    "@pulumi/pulumi": "^3.19.0"
+  },
+  "packageManager": "yarn@3.2.1"
 }
