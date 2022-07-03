@@ -1,6 +1,22 @@
 import * as github from '@pulumi/github'
 
-export const team = (key: string, options: github.TeamArgs) => {
+/**
+ * Invite a GitHub user into the organization.
+ * @param username - The username of the user to invite.
+ */
+export const creator = (username: string) =>
+  new github.TeamMembership(`membership-for-${username}`, {
+    teamId: '6011674',
+    username,
+  })
+
+/**
+ * Creates a team on the GitHub organization.
+ * @param key - A unique key for the team.
+ * @param options - The options. Please specify `name` and `description`.
+ * @returns An object representing the team.
+ */
+export const team = (key: string, options: github.TeamArgs): ITeam => {
   const team = new github.Team(`team-${key}`, { privacy: 'closed', ...options })
   return Object.assign(
     (username: string) =>
@@ -12,22 +28,27 @@ export const team = (key: string, options: github.TeamArgs) => {
   )
 }
 
-export const creator = (username: string) =>
-  new github.TeamMembership(`membership-for-${username}`, {
-    teamId: '6011674',
-    username,
-  })
+export interface ITeam {
+  /**
+   * Invite a GitHub user into the team.
+   */
+  (username: string): github.TeamMembership
+  key: string
+  team: github.Team
+}
 
+/**
+ * Grant teams admin rights to a GitHub organization.
+ * @param name - The name of the repository.
+ * @param t - An object returned by the `team` function.
+ * @returns
+ */
 export const grantAdmin = (
   name: string,
-  teams: { key: string; team: github.Team }[],
-) => {
-  return teams.map(
-    (t) =>
-      new github.TeamRepository(`team-${t.key}-repo-${name}`, {
-        teamId: t.team.id,
-        repository: name,
-        permission: 'admin',
-      }),
-  )
-}
+  t: { key: string; team: github.Team },
+) =>
+  new github.TeamRepository(`team-${t.key}-repo-${name}`, {
+    teamId: t.team.id,
+    repository: name,
+    permission: 'admin',
+  })
