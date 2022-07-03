@@ -1,4 +1,4 @@
-import { creator, grant, team } from './lib'
+import { creator, grantAdmin, team } from './lib'
 
 creator('betich')
 creator('chayapatr')
@@ -18,4 +18,4 @@ const websiteMaintainer = team('website', {
 websiteMaintainer('dtinth')
 websiteMaintainer('heypoom')
 websiteMaintainer('chayapatr')
-grant('creatorsgarten.org', [websiteMaintainer])
+grantAdmin('creatorsgarten.org', [websiteMaintainer])

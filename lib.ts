@@ -18,7 +18,7 @@ export const creator = (username: string) =>
     username,
   })
 
-export const grant = (
+export const grantAdmin = (
   name: string,
   teams: { key: string; team: github.Team }[],
 ) => {
@@ -27,7 +27,7 @@ export const grant = (
       new github.TeamRepository(`team-${t.key}-repo-${name}`, {
         teamId: t.team.id,
         repository: name,
-        permission: 'pull',
+        permission: 'admin',
       }),
   )
 }
