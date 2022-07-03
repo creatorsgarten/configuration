@@ -1,10 +1,4 @@
-import * as github from '@pulumi/github'
-
-const creator = (username: string) =>
-  new github.TeamMembership(`membership-for-${username}`, {
-    teamId: '6011674',
-    username,
-  })
+import { creator, team } from './lib'
 
 creator('betich')
 creator('chayapatr')
@@ -16,3 +10,11 @@ creator('pp3times')
 creator('PromptJS19')
 creator('rayriffy')
 creator('SaltyAom')
+
+const websiteMaintainer = team('website', {
+  name: 'Website',
+  description: 'Website maintainer',
+})
+websiteMaintainer('dtinth')
+websiteMaintainer('heypoom')
+websiteMaintainer('chayapatr')
