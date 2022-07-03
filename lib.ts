@@ -1,7 +1,7 @@
 import * as github from '@pulumi/github'
 
 export const team = (key: string, options: github.TeamArgs) => {
-  const team = new github.Team(key, { privacy: 'closed', ...options })
+  const team = new github.Team(`team-${key}`, { privacy: 'closed', ...options })
   return (username: string) =>
     new github.TeamMembership(`team-${key}-membership-for-${username}`, {
       teamId: team.id,
