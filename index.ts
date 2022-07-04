@@ -17,6 +17,7 @@ creator('rayriffy')
 creator('SaltyAom')
 creator('Leomotors')
 creator('kana2011th')
+creator('tententgc')
 
 // Website team
 const websiteMaintainer = team('website', {
