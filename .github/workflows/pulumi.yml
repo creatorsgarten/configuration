@@ -18,14 +18,19 @@ jobs:
           cache: npm
       - name: Obtain a GitHub App Installation Access Token
         id: githubAppAuth
-        if: secrets.GH_APP_CREDENTIALS_TOKEN != ''
         run: |
-          TOKEN="$(npx obtain-github-app-installation-access-token ci ${{ secrets.GH_APP_CREDENTIALS_TOKEN }})"
-          echo "::add-mask::$TOKEN"
+          CREDS="${{ secrets.GH_APP_CREDENTIALS_TOKEN }}"
+          if [ -n "$CREDS" ]
+          then
+            TOKEN="$(npx obtain-github-app-installation-access-token ci ${{ secrets.GH_APP_CREDENTIALS_TOKEN }})"
+            echo "::add-mask::$TOKEN"
+          else
+            TOKEN=""
+          fi
           echo "::set-output name=token::$TOKEN"
       - uses: actions/checkout@v3
         with:
-          repository: 'creatorsgarten/stack'
+          repository: "creatorsgarten/stack"
           token: ${{ steps.githubAppAuth.outputs.token }}
           path: stack
       - run: yarn
