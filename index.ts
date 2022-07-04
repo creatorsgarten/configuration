@@ -13,6 +13,7 @@ creator('pp3times')
 creator('PromptJS19')
 creator('rayriffy')
 creator('SaltyAom')
+creator('C0M3TZZ')
 
 // Website team
 const websiteMaintainer = team('website', {
