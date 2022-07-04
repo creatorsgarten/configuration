@@ -7,6 +7,7 @@ creator('betich')
 creator('chayapatr')
 creator('C0M3TZZ')
 creator('dtinth')
+creator('Gusb3ll')
 creator('heypoom')
 creator('msp5382')
 creator('narze')
@@ -18,7 +19,16 @@ creator('SaltyAom')
 creator('Leomotors')
 creator('kana2011th')
 creator('tententgc')
+
 creator('sleepntsheep')
+
+creator('Issawat')
+
+creator('varkaria')
+
+creator('mikkipastel')
+
+
 
 // Website team
 const websiteMaintainer = team('website', {
