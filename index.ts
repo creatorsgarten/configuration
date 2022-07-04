@@ -3,12 +3,38 @@ import { creator, grantAdmin, team } from './lib'
 // If you participated in our events and consider yourself a creator,
 // feel free to add your username to the list below and be invited into
 // the creatorsgarten organization.
+//
+// Once you are invited, please accept the invitation within 7 days,
+// otherwise the invitation will expire.
+//
+// Once you are a member, you can go to the member list page at
+// <https://github.com/orgs/creatorsgarten/people> and change the
+// membership visibility to "Public." This will add the Creatorsgarten
+// logo to your GitHub profile.
+//
+// As a member, you can also create Public and Private repositories
+// in this organization when you work on related projects.
+//
+// Note that adding yourself to this list here doesn’t automatically
+// grant you access to extra repositories beyond what you currently have
+// access to. To access certain repositories, you must be a part of the
+// respective team. The list of teams and their members are below this
+// list.
+//
+// PLEASE KEEP THIS LIST SORTED ALPHABETICALLY.
+//
 creator('betich')
-creator('chayapatr')
 creator('C0M3TZZ')
+creator('chayapatr')
 creator('dtinth')
+creator('GGolfz')
 creator('Gusb3ll')
 creator('heypoom')
+creator('Issawat')
+creator('kana2011th')
+creator('Kittonn')
+creator('Leomotors')
+creator('mikkipastel')
 creator('msp5382')
 creator('narze')
 creator('pankace')
@@ -16,22 +42,9 @@ creator('pp3times')
 creator('PromptJS19')
 creator('rayriffy')
 creator('SaltyAom')
-creator('Leomotors')
-creator('kana2011th')
-creator('tententgc')
-creator('Kittonn')
-
 creator('sleepntsheep')
-
-creator('Issawat')
-
+creator('tententgc')
 creator('varkaria')
-
-creator('mikkipastel')
-
-creator('GGolfz')
-
-
 
 // Website team
 const websiteMaintainer = team('website', {
