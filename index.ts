@@ -5,15 +5,16 @@ import { creator, grantAdmin, team } from './lib'
 // the creatorsgarten organization.
 creator('betich')
 creator('chayapatr')
+creator('C0M3TZZ')
 creator('dtinth')
 creator('heypoom')
 creator('msp5382')
+creator('narze')
 creator('pankace')
 creator('pp3times')
 creator('PromptJS19')
 creator('rayriffy')
 creator('SaltyAom')
-creator('C0M3TZZ')
 
 // Website team
 const websiteMaintainer = team('website', {
