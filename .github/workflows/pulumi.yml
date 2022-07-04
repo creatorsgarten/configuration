@@ -19,25 +19,13 @@ jobs:
       - name: Obtain a GitHub App Installation Access Token
         id: githubAppAuth
         run: |
-          CREDS="${{ secrets.GH_APP_CREDENTIALS_TOKEN }}"
-          if [ -n "$CREDS" ]
-          then
-            TOKEN="$(npx obtain-github-app-installation-access-token ci ${{ secrets.GH_APP_CREDENTIALS_TOKEN }})"
-            echo "::add-mask::$TOKEN"
-          else
-            TOKEN=""
-          fi
+          TOKEN="$(npx obtain-github-app-installation-access-token ci ${{ secrets.GH_APP_CREDENTIALS_TOKEN }})"
+          echo "::add-mask::$TOKEN"
           echo "::set-output name=token::$TOKEN"
       - uses: actions/checkout@v3
-        if: steps.githubAppAuth.outputs.token != ''
         with:
           repository: "creatorsgarten/stack"
           token: ${{ steps.githubAppAuth.outputs.token }}
-          path: stack
-      - uses: actions/checkout@v3
-        if: steps.githubAppAuth.outputs.token == ''
-        with:
-          repository: "creatorsgarten/stack"
           path: stack
       - run: yarn
       - run: curl -fsSL https://get.pulumi.com | sh
