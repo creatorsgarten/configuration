@@ -29,16 +29,16 @@ jobs:
           fi
           echo "::set-output name=token::$TOKEN"
       - uses: actions/checkout@v3
+        if: steps.githubAppAuth.outputs.token != ''
         with:
           repository: "creatorsgarten/stack"
           token: ${{ steps.githubAppAuth.outputs.token }}
           path: stack
-          if: steps.githubAppAuth.outputs.token != ''
       - uses: actions/checkout@v3
+        if: steps.githubAppAuth.outputs.token == ''
         with:
           repository: "creatorsgarten/stack"
           path: stack
-          if: steps.githubAppAuth.outputs.token == ''
       - run: yarn
       - run: curl -fsSL https://get.pulumi.com | sh
       - run: ~/.pulumi/bin/pulumi login --local
