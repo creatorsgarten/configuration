@@ -26,6 +26,7 @@ import { creator, grantAdmin, team } from './lib'
 creator('betich')
 creator('C0M3TZZ')
 creator('chayapatr')
+creator('DEmayonnaise')
 creator('dtinth')
 creator('GGolfz')
 creator('Gusb3ll')
