@@ -47,6 +47,7 @@ creator('SaltyAom')
 creator('sleepntsheep')
 creator('tententgc')
 creator('varkaria')
+creator('FloatKasemtan')
 
 // Website team
 const websiteMaintainer = team('website', {
