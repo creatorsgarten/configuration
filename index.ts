@@ -37,6 +37,7 @@ creator('kana2011th')
 creator('Kittonn')
 creator('Leomotors')
 creator('mikkipastel')
+creator('Mixko50')
 creator('msp5382')
 creator('narze')
 creator('pankace')
@@ -47,7 +48,6 @@ creator('SaltyAom')
 creator('sleepntsheep')
 creator('tententgc')
 creator('varkaria')
-creator('Mixko50')
 
 // Website team
 const websiteMaintainer = team('website', {
