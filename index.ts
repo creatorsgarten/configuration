@@ -29,6 +29,7 @@ creator('chayapatr')
 creator('DEmayonnaise')
 creator('DrowningToast')
 creator('dtinth')
+creator('FloatKasemtan')
 creator('GGolfz')
 creator('Gusb3ll')
 creator('heypoom')
@@ -47,7 +48,6 @@ creator('SaltyAom')
 creator('sleepntsheep')
 creator('tententgc')
 creator('varkaria')
-creator('FloatKasemtan')
 
 // Website team
 const websiteMaintainer = team('website', {
