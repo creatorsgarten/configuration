@@ -51,6 +51,7 @@ creator('sleepntsheep')
 creator('tententgc')
 creator('varkaria')
 creator('balabeltmimi')
+creator('lebrancconvas')
 
 // Website team
 const websiteMaintainer = team('website', {
