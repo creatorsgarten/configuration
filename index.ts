@@ -49,10 +49,12 @@ creator('richeyphu')
 creator('SaltyAom')
 creator('sleepntsheep')
 creator('tententgc')
+creator('thitiwat-t')
 creator('varkaria')
 creator('balabeltmimi')
 creator('lebrancconvas')
 creator('runyasak')
+creator('siravijbb')
 
 // Website team
 const websiteMaintainer = team('website', {
