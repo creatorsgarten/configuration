@@ -68,3 +68,16 @@ websiteMaintainer('dtinth')
 websiteMaintainer('heypoom')
 websiteMaintainer('chayapatr')
 grantAdmin('creatorsgarten.org', websiteMaintainer)
+
+// Event organizers can manage the discussions repository.
+const eventOrganizer = team('organizers', {
+  name: 'Event organizers',
+  description: 'Event organizers',
+})
+eventOrganizer('betich')
+eventOrganizer('chayapatr')
+eventOrganizer('dtinth')
+eventOrganizer('heypoom')
+eventOrganizer('narze')
+eventOrganizer('rayriffy')
+eventOrganizer('SaltyAom')
