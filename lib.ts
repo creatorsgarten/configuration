@@ -38,7 +38,7 @@ export interface ITeam {
 }
 
 /**
- * Grant teams admin rights to a GitHub organization.
+ * Grant teams admin rights to a GitHub repository.
  * @param name - The name of the repository.
  * @param t - An object returned by the `team` function.
  * @returns
@@ -51,4 +51,20 @@ export const grantAdmin = (
     teamId: t.team.id,
     repository: name,
     permission: 'admin',
+  })
+
+/**
+ * Grant teams write access to a GitHub repository.
+ * @param name - The name of the repository.
+ * @param t - An object returned by the `team` function.
+ * @returns
+ */
+export const grantWriteAccess = (
+  name: string,
+  t: { key: string; team: github.Team },
+) =>
+  new github.TeamRepository(`team-${t.key}-repo-${name}`, {
+    teamId: t.team.id,
+    repository: name,
+    permission: 'push',
   })

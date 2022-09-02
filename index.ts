@@ -1,4 +1,4 @@
-import { creator, grantAdmin, team } from './lib'
+import { creator, grantAdmin, grantWriteAccess, team } from './lib'
 
 // If you participated in our events and consider yourself a creator,
 // feel free to add your username to the list below and be invited into
@@ -81,3 +81,4 @@ eventOrganizer('heypoom')
 eventOrganizer('narze')
 eventOrganizer('rayriffy')
 eventOrganizer('SaltyAom')
+grantWriteAccess('discussions', eventOrganizer)
