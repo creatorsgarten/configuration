@@ -91,6 +91,7 @@ const hacktoberfestMuseumMaintainers = team('hacktoberfestmuseum', {
 hacktoberfestMuseumMaintainers('Gusb3ll')
 hacktoberfestMuseumMaintainers('heypoom')
 hacktoberfestMuseumMaintainers('intaniger')
+hacktoberfestMuseumMaintainers('Leomotors')
 hacktoberfestMuseumMaintainers('ryanrw')
 hacktoberfestMuseumMaintainers('siravijbb')
 hacktoberfestMuseumMaintainers('tinarskii')
