@@ -82,3 +82,16 @@ eventOrganizer('narze')
 eventOrganizer('rayriffy')
 eventOrganizer('SaltyAom')
 grantWriteAccess('discussions', eventOrganizer)
+
+// Hacktoberfest Museum maintainers
+const hacktoberfestMuseumMaintainers = team('hacktoberfestmuseum', {
+  name: 'Hacktoberfest Museum',
+  description: 'Hacktoberfest museum maintainers',
+})
+hacktoberfestMuseumMaintainers('Gusb3ll')
+hacktoberfestMuseumMaintainers('heypoom')
+hacktoberfestMuseumMaintainers('intaniger')
+hacktoberfestMuseumMaintainers('ryanrw')
+hacktoberfestMuseumMaintainers('siravijbb')
+hacktoberfestMuseumMaintainers('tinarskii')
+grantWriteAccess('hacktoberfest-museum', hacktoberfestMuseumMaintainers)
