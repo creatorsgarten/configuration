@@ -84,16 +84,26 @@ eventOrganizer('SaltyAom')
 grantWriteAccess('discussions', eventOrganizer)
 
 // Hacktoberfest Museum maintainers
-const hacktoberfestMuseumMaintainers = team('hacktoberfestmuseum', {
+const hacktoberfestMuseumMaintainer = team('hacktoberfestmuseum', {
   name: 'Hacktoberfest Museum',
   description: 'Hacktoberfest museum maintainers',
 })
-hacktoberfestMuseumMaintainers('Gusb3ll')
-hacktoberfestMuseumMaintainers('heypoom')
-hacktoberfestMuseumMaintainers('intaniger')
-hacktoberfestMuseumMaintainers('Leomotors')
-hacktoberfestMuseumMaintainers('ryanrw')
-hacktoberfestMuseumMaintainers('runyasak')
-hacktoberfestMuseumMaintainers('siravijbb')
-hacktoberfestMuseumMaintainers('tinarskii')
-grantWriteAccess('hacktoberfest-museum', hacktoberfestMuseumMaintainers)
+hacktoberfestMuseumMaintainer('Gusb3ll')
+hacktoberfestMuseumMaintainer('heypoom')
+hacktoberfestMuseumMaintainer('intaniger')
+hacktoberfestMuseumMaintainer('Leomotors')
+hacktoberfestMuseumMaintainer('ryanrw')
+hacktoberfestMuseumMaintainer('runyasak')
+hacktoberfestMuseumMaintainer('siravijbb')
+hacktoberfestMuseumMaintainer('tinarskii')
+grantWriteAccess('hacktoberfest-museum', hacktoberfestMuseumMaintainer)
+
+// VOD team
+const vodTeam = team('vod', {
+  name: 'VOD team',
+  description: 'Videos on demand team',
+})
+vodTeam('dtinth')
+vodTeam('rayriffy')
+vodTeam('wiput1999')
+grantWriteAccess('videos', vodTeam)
