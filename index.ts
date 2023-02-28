@@ -63,6 +63,7 @@ creator('balabeltmimi')
 creator('lebrancconvas')
 creator('runyasak')
 creator('siravijbb')
+creator('wasdee')
 
 // Website team
 const websiteMaintainer = team('website', {
