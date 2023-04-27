@@ -70,10 +70,13 @@ const websiteMaintainer = team('website', {
   name: 'Website',
   description: 'Website maintainers',
 })
+websiteMaintainer('betich')
 websiteMaintainer('dtinth')
 websiteMaintainer('heypoom')
+websiteMaintainer('rayriffy')
 websiteMaintainer('chayapatr')
 grantAdmin('creatorsgarten.org', websiteMaintainer)
+grantAdmin('grtn.org', websiteMaintainer)
 
 // Event organizers can manage the discussions repository.
 const eventOrganizer = team('organizers', {
