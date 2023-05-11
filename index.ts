@@ -65,6 +65,7 @@ creator('lebrancconvas')
 creator('runyasak')
 creator('siravijbb')
 creator('wasdee')
+creator('saltyaom-engine')
 
 // Website team
 const websiteMaintainer = team('website', {
@@ -76,6 +77,7 @@ websiteMaintainer('dtinth')
 websiteMaintainer('heypoom')
 websiteMaintainer('rayriffy')
 websiteMaintainer('chayapatr')
+websiteMaintainer('SaltyAom')
 grantAdmin('creatorsgarten.org', websiteMaintainer)
 grantAdmin('grtn.org', websiteMaintainer)
 
