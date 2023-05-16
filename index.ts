@@ -119,3 +119,12 @@ vodTeam('dtinth')
 vodTeam('rayriffy')
 vodTeam('wiput1999')
 grantWriteAccess('videos', vodTeam)
+
+// Kaogeek Discord bot team
+const kaogeek = team('kaogeek', {
+  name: 'kaogeek',
+  description: 'Kao.Geek Discord bot',
+})
+kaogeek('masuru-aomsin')
+kaogeek('opecgame')
+grantAdmin('kaogeek-discord-bot', kaogeek)
