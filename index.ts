@@ -134,6 +134,7 @@ const kaogeekDev = team('kaogeek-dev', {
 kaogeek('Gusb3ll')
 kaogeek('Leomotors')
 kaogeek('masuru-aomsin')
+kaogeek('narze')
 kaogeek('opecgame')
 kaogeek('quarkhadron')
 kaogeek('SaltyAom')
