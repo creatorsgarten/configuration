@@ -124,8 +124,12 @@ grantWriteAccess('videos', vodTeam)
 
 // Kaogeek Discord bot team
 const kaogeek = team('kaogeek', {
-  name: 'Kaogeek',
-  description: 'Kao.Geek Discord bot',
+  name: 'Kaogeek bot admins',
+  description: 'Kao.Geek Discord bot admins',
+})
+const kaogeekDev = team('kaogeek-dev', {
+  name: 'Kaogeek bot developers',
+  description: 'Kao.Geek Discord bot developers',
 })
 kaogeek('Gusb3ll')
 kaogeek('Leomotors')
@@ -135,3 +139,5 @@ kaogeek('SaltyAom')
 kaogeek('ST4RCHASER')
 kaogeek('wiput1999')
 grantAdmin('kaogeek-discord-bot', kaogeek)
+kaogeekDev('buskun')
+grantWriteAccess('kaogeek-discord-bot', kaogeekDev)
