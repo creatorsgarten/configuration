@@ -132,6 +132,7 @@ const kaogeekDev = team('kaogeek-dev', {
   description: 'Kao.Geek Discord bot developers',
 })
 kaogeek('Gusb3ll')
+kaogeek('LagSeeN')
 kaogeek('Leomotors')
 kaogeek('masuru-aomsin')
 kaogeek('narze')
