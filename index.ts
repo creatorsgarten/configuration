@@ -37,6 +37,7 @@ creator('FloatKasemtan')
 creator('GGolfz')
 creator('Gusb3ll')
 creator('heypoom')
+creator('hunt')
 creator('Issawat')
 creator('kana2011th')
 creator('Kittonn')
@@ -69,6 +70,7 @@ creator('tinarskii')
 creator('varkaria')
 creator('wasdee')
 creator('xb1g')
+creator('wit03')
 
 // Website team
 const websiteMaintainer = team('website', {
@@ -81,6 +83,7 @@ websiteMaintainer('heypoom')
 websiteMaintainer('rayriffy')
 websiteMaintainer('chayapatr')
 websiteMaintainer('SaltyAom')
+websiteMaintainer('wit03')
 grantAdmin('creatorsgarten.org', websiteMaintainer)
 grantAdmin('grtn.org', websiteMaintainer)
 
@@ -96,6 +99,10 @@ eventOrganizer('heypoom')
 eventOrganizer('narze')
 eventOrganizer('rayriffy')
 eventOrganizer('SaltyAom')
+eventOrganizer('
+               
+               
+               ')
 grantWriteAccess('discussions', eventOrganizer)
 
 // Hacktoberfest Museum maintainers
