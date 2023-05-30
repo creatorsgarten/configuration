@@ -99,10 +99,6 @@ eventOrganizer('heypoom')
 eventOrganizer('narze')
 eventOrganizer('rayriffy')
 eventOrganizer('SaltyAom')
-eventOrganizer('
-               
-               
-               ')
 grantWriteAccess('discussions', eventOrganizer)
 
 // Hacktoberfest Museum maintainers
