@@ -69,7 +69,7 @@ creator('tinarskii')
 creator('varkaria')
 creator('wasdee')
 creator('xb1g')
-
+creator('wit03')
 
 // Website team
 const websiteMaintainer = team('website', {
@@ -81,6 +81,7 @@ websiteMaintainer('dtinth')
 websiteMaintainer('heypoom')
 websiteMaintainer('rayriffy')
 websiteMaintainer('chayapatr')
+websiteMaintainer('wit03')
 grantAdmin('creatorsgarten.org', websiteMaintainer)
 grantAdmin('grtn.org', websiteMaintainer)
 
