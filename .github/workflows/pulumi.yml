@@ -10,37 +10,52 @@ jobs:
     env:
       PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node.js
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8
+      - name: node
         uses: actions/setup-node@v2
         with:
-          node-version: 16
-          cache: npm
-      - name: Obtain a GitHub App Installation Access Token
+          node-version: 18
+          cache: pnpm
+      - name: access token
         id: githubAppAuth
         run: |
           TOKEN="$(npx obtain-github-app-installation-access-token ci ${{ secrets.GH_APP_CREDENTIALS_TOKEN }})"
           echo "::add-mask::$TOKEN"
           echo "::set-output name=token::$TOKEN"
-      - uses: actions/checkout@v3
+      - name: get stack
+        uses: actions/checkout@v3
         with:
           repository: "creatorsgarten/stack"
           token: ${{ steps.githubAppAuth.outputs.token }}
           path: stack
-      - run: yarn
-      - run: curl -fsSL https://get.pulumi.com | sh
-      - run: ~/.pulumi/bin/pulumi login --local
-      - run: ~/.pulumi/bin/pulumi stack init gh
-      - run: ~/.pulumi/bin/pulumi stack select gh
-      - run: ~/.pulumi/bin/pulumi stack import --file=stack/stack.json
-      - run: ~/.pulumi/bin/pulumi preview
-      - run: ~/.pulumi/bin/pulumi up --yes
+      - name: install
+        run: pnpm -r i --frozen-lockfile
+      - name: get pulumi
+        run: curl -fsSL https://get.pulumi.com | sh
+      - name: prepare
+        run: |
+          ~/.pulumi/bin/pulumi login --local
+          ~/.pulumi/bin/pulumi stack init gh
+          ~/.pulumi/bin/pulumi stack select gh
+          ~/.pulumi/bin/pulumi stack import --file=stack/stack.json
+      - name: preview
+        run: ~/.pulumi/bin/pulumi preview
+      - name: execute
+        run: ~/.pulumi/bin/pulumi up --yes
         env:
           GITHUB_TOKEN: ${{ steps.githubAppAuth.outputs.token }}
         if: github.ref == 'refs/heads/main'
-      - run: ~/.pulumi/bin/pulumi stack export --file=stack/stack.json
+      - name: export
+        run: ~/.pulumi/bin/pulumi stack export --file=stack/stack.json
         if: github.ref == 'refs/heads/main'
-      - run: cat stack/stack.json
+      - name: print
+        run: cat stack/stack.json
         if: github.ref == 'refs/heads/main'
-      - run: ./sync.sh
+      - name: sync
+        run: ./sync.sh
         if: github.ref == 'refs/heads/main'
