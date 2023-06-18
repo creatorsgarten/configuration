@@ -14,8 +14,8 @@ dependencies:
 
 devDependencies:
   '@types/node':
-    specifier: ^14
-    version: 14.0.0
+    specifier: ^18
+    version: 18.0.0
 
 packages:
 
@@ -23,7 +23,7 @@ packages:
     resolution: {integrity: sha512-4qJqqn+CU/nBydz9ePJP+oa8dz0U42Ut/GejlbyaQ1xTkynCc+ndNHHnISlNeHawDsv4MOAyP3mV/EnDNUw2zA==}
     engines: {node: ^8.13.0 || >=10.10.0}
     dependencies:
-      '@types/node': 14.0.0
+      '@types/node': 18.0.0
     dev: false
 
   /@logdna/tail-file@2.2.0:
@@ -110,8 +110,8 @@ packages:
     resolution: {integrity: sha512-MqTGEo5bj5t157U6fA/BiDynNkn0YknVdh48CMPkTSpFTVmvao5UQmm7uEF6xBEo7qIMAlY/JSleYaE6VOdpaA==}
     dev: false
 
-  /@types/node@14.0.0:
-    resolution: {integrity: sha512-BZHGudjgZ8cweaQC2Q7hKpZNT2sq//NNbc7KcuTdti10S/tKIXpqiAgzZZFdwm6uUdRE9jy6UYSESNvB5rmFgA==}
+  /@types/node@18.0.0:
+    resolution: {integrity: sha512-cHlGmko4gWLVI27cGJntjs/Sj8th9aYwplmZFwmmgYQQvL5NUsgVJG7OddLvNfLqYS31KFN0s3qlaD9qCaxACA==}
 
   /argparse@1.0.10:
     resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==}
@@ -616,7 +616,7 @@ packages:
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
       '@types/long': 4.0.2
-      '@types/node': 14.0.0
+      '@types/node': 18.0.0
       long: 4.0.0
     dev: false
 
