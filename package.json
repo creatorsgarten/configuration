@@ -1,11 +1,12 @@
 {
   "name": "creatorsgarten",
+  "packageManager": "pnpm@8.6.2",
+  "private": true,
   "devDependencies": {
-    "@types/node": "^14"
+    "@types/node": "^18"
   },
   "dependencies": {
     "@pulumi/github": "^4.8.1",
     "@pulumi/pulumi": "^3.19.0"
-  },
-  "packageManager": "yarn@3.2.1"
+  }
 }
