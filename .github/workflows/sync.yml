@@ -43,6 +43,6 @@ jobs:
           ~/.pulumi/bin/pulumi stack init gh
           ~/.pulumi/bin/pulumi stack select gh
           ~/.pulumi/bin/pulumi stack import --file=stack/stack.json
-          ~/.pulumi/bin/pulumi refresh --clear-pending-creates --yes
+          ~/.pulumi/bin/pulumi refresh --yes
       - name: preview
         run: ~/.pulumi/bin/pulumi preview
