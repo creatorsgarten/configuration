@@ -1,0 +1,48 @@
+name: Sync
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+jobs:
+  pulumi:
+    runs-on: ubuntu-latest
+    env:
+      PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8
+      - name: node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+          cache: pnpm
+      - name: access token
+        id: githubAppAuth
+        run: |
+          TOKEN="$(npx obtain-github-app-installation-access-token ci ${{ secrets.GH_APP_CREDENTIALS_TOKEN }})"
+          echo "::add-mask::$TOKEN"
+          echo "::set-output name=token::$TOKEN"
+      - name: get stack
+        uses: actions/checkout@v3
+        with:
+          repository: "creatorsgarten/stack"
+          token: ${{ steps.githubAppAuth.outputs.token }}
+          path: stack
+      - name: install
+        run: pnpm -r i --frozen-lockfile
+      - name: get pulumi
+        run: curl -fsSL https://get.pulumi.com | sh
+      - name: prepare
+        run: |
+          ~/.pulumi/bin/pulumi login --local
+          ~/.pulumi/bin/pulumi stack init gh
+          ~/.pulumi/bin/pulumi stack select gh
+          ~/.pulumi/bin/pulumi stack import --file=stack/stack.json
+          ~/.pulumi/bin/pulumi refresh --clear-pending-create
+      - name: preview
+        run: ~/.pulumi/bin/pulumi preview
