@@ -30,7 +30,7 @@ jobs:
           echo "::set-output name=token::$TOKEN"
         env:
           GH_APP_CREDENTIALS_TOKEN: ${{ secrets.GH_APP_CREDENTIALS_TOKEN }}
-      - name: get stack (authenticated)
+      - name: get stack
         uses: actions/checkout@v3
         with:
           repository: "creatorsgarten/stack"
