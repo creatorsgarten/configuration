@@ -23,10 +23,13 @@ jobs:
           cache: pnpm
       - name: access token
         id: githubAppAuth
+        if: env.GH_APP_CREDENTIALS_TOKEN
         run: |
           TOKEN="$(npx obtain-github-app-installation-access-token ci ${{ secrets.GH_APP_CREDENTIALS_TOKEN }})"
           echo "::add-mask::$TOKEN"
           echo "::set-output name=token::$TOKEN"
+        env:
+          GH_APP_CREDENTIALS_TOKEN: ${{ secrets.GH_APP_CREDENTIALS_TOKEN }}
       - name: get stack
         uses: actions/checkout@v3
         with:
