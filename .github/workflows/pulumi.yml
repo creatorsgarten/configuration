@@ -30,11 +30,11 @@ jobs:
           echo "::set-output name=token::$TOKEN"
         env:
           GH_APP_CREDENTIALS_TOKEN: ${{ secrets.GH_APP_CREDENTIALS_TOKEN }}
-      - name: get stack
+      - name: get stack (authenticated)
         uses: actions/checkout@v3
         with:
           repository: "creatorsgarten/stack"
-          token: ${{ steps.githubAppAuth.outputs.token }}
+          token: ${{ steps.githubAppAuth.outputs.token || secrets.GITHUB_TOKEN }}
           path: stack
       - name: install
         run: pnpm -r i --frozen-lockfile
