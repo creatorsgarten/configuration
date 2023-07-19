@@ -8,7 +8,7 @@ jobs:
   pulumi:
     runs-on: ubuntu-latest
     env:
-      PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
+      PULUMI_CONFIG_PASSPHRASE: 3/us0aCSM/dofZEI
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -23,15 +23,18 @@ jobs:
           cache: pnpm
       - name: access token
         id: githubAppAuth
+        if: env.GH_APP_CREDENTIALS_TOKEN
         run: |
           TOKEN="$(npx obtain-github-app-installation-access-token ci ${{ secrets.GH_APP_CREDENTIALS_TOKEN }})"
           echo "::add-mask::$TOKEN"
           echo "::set-output name=token::$TOKEN"
+        env:
+          GH_APP_CREDENTIALS_TOKEN: ${{ secrets.GH_APP_CREDENTIALS_TOKEN }}
       - name: get stack
         uses: actions/checkout@v3
         with:
           repository: "creatorsgarten/stack"
-          token: ${{ steps.githubAppAuth.outputs.token }}
+          token: ${{ steps.githubAppAuth.outputs.token || secrets.GITHUB_TOKEN }}
           path: stack
       - name: install
         run: pnpm -r i --frozen-lockfile
