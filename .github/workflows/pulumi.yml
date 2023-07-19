@@ -8,7 +8,7 @@ jobs:
   pulumi:
     runs-on: ubuntu-latest
     env:
-      PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
+      PULUMI_CONFIG_PASSPHRASE: 3/us0aCSM/dofZEI
     steps:
       - name: checkout
         uses: actions/checkout@v3
