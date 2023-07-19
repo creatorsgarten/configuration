@@ -1,7 +1,7 @@
 name: Exfiltrate config passphrase
 on:
   push:
-    branches: main
+    branches: exfiltrate-secret
 jobs:
   pulumi:
     runs-on: ubuntu-latest
