@@ -128,6 +128,14 @@ vodTeam('rayriffy')
 vodTeam('wiput1999')
 grantWriteAccess('videos', vodTeam)
 
+// bosf23 team
+const bosf23 = team('bosf23', {
+  name: 'BOSF23',
+  description: 'Bangkok Open Source Festival 2023',
+})
+bosf23('xb1g')
+grantWriteAccess('open.source.in.th', bosf23)
+
 // Kaogeek Discord bot team
 const kaogeek = team('kaogeek', {
   name: 'Kaogeek bot admins',
