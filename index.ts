@@ -133,8 +133,9 @@ const bosf23 = team('bosf23', {
   name: 'BOSF23',
   description: 'Bangkok Open Source Festival 2023',
 })
-bosf23('xb1g')
+bosf23('bombnp')
 bosf23('chaya-tan')
+bosf23('xb1g')
 grantWriteAccess('open.source.in.th', bosf23)
 
 // Kaogeek Discord bot team
