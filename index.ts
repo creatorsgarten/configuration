@@ -85,6 +85,7 @@ creator('wasdee')
 creator('xb1g')
 creator('wit03')
 creator('ptteerat')
+creator('nantipatsoften')
 
 // Website team
 const websiteMaintainer = team('website', {
