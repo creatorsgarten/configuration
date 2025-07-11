@@ -84,6 +84,7 @@ creator('varkaria')
 creator('wasdee')
 creator('xb1g')
 creator('wit03')
+creator('ptteerat')
 
 // Website team
 const websiteMaintainer = team('website', {
@@ -114,6 +115,7 @@ eventOrganizer('narze')
 eventOrganizer('PhantipK')
 eventOrganizer('rayriffy')
 eventOrganizer('SaltyAom')
+eventOrganizer('ptteerat')
 grantWriteAccess('discussions', eventOrganizer)
 
 // Hacktoberfest Museum maintainers
