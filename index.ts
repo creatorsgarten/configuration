@@ -59,6 +59,7 @@ creator('NakZaa')
 creator('narze')
 creator('nattpapat')
 creator('ong22280')
+creator('opusdelu24')
 creator('pankace')
 creator('papatsry-ok')
 creator('pattvira')
@@ -86,7 +87,6 @@ creator('xb1g')
 creator('wit03')
 creator('ptteerat')
 creator('nantipatsoften')
-creator('opusdelu24')
 
 // Website team
 const websiteMaintainer = team('website', {
