@@ -88,6 +88,7 @@ creator('xb1g')
 creator('wit03')
 creator('ptteerat')
 creator('nantipatsoften')
+creator('yothgewalt')
 
 // Website team
 const websiteMaintainer = team('website', {
