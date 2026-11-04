@@ -104,6 +104,7 @@ websiteMaintainer('rayriffy')
 websiteMaintainer('chayapatr')
 websiteMaintainer('SaltyAom')
 websiteMaintainer('wit03')
+websiteMaintainer('jukbot')
 grantAdmin('creatorsgarten.org', websiteMaintainer)
 grantAdmin('grtn.org', websiteMaintainer)
 
@@ -122,6 +123,7 @@ eventOrganizer('PhantipK')
 eventOrganizer('rayriffy')
 eventOrganizer('SaltyAom')
 eventOrganizer('ptteerat')
+eventOrganizer('jukbot')
 grantWriteAccess('discussions', eventOrganizer)
 
 // Hacktoberfest Museum maintainers
@@ -147,6 +149,7 @@ const vodTeam = team('vod', {
 vodTeam('dtinth')
 vodTeam('rayriffy')
 vodTeam('wiput1999')
+vodTeam('jukbot')
 grantWriteAccess('videos', vodTeam)
 
 // bosf23 team
